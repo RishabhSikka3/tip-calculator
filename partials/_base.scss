@@ -1,0 +1,26 @@
+@use "variables";
+@use "functions";
+
+/* Resets Start */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Resets End */
+
+/* Body Start */
+
+html {
+  font-family: variables.$primary-font;
+  font-size: variables.$font-size-body;
+  font-weight: variables.$font-weight-bold;
+  background-color: variables.$grey-200;
+  color: variables.$green-900;
+  line-height: functions.rem(36px);
+  letter-spacing: 0rem;
+}
+
+/* Body End */

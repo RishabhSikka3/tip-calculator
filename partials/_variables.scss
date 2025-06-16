@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+@use "functions";
+
+/* Variables Start */
+
+// Colors
+$green-900: hsl(183, 100%, 15%);
+$green-800: rgb(8, 92, 97);
+$green-750: rgb(13, 104, 109);
+$green-400: hsl(172, 67%, 45%);
+$green-200: rgb(159, 232, 223);
+$grey-600: rgb(61, 102, 102);
+$grey-550: rgb(82, 120, 120);
+$grey-500: hsl(186, 14%, 43%);
+$grey-400: hsl(184, 14%, 56%);
+$grey-300: rgb(158, 187, 189);
+$grey-200: hsl(185, 41%, 84%);
+$grey-50: hsl(189, 47%, 97%);
+$orange-400: rgb(225, 112, 82);
+$white: hsl(0, 100%, 100%);
+$black: #000000;
+
+// Typography
+$primary-font: "Space Mono", monospace;
+$font-size-body: 24px;
+
+// Font Weights
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-0: functions.rem(0px);
+$spacing-100: functions.rem(8px);
+$spacing-200: functions.rem(16px);
+$spacing-300: functions.rem(24px);
+$spacing-400: functions.rem(32px);
+$spacing-600: functions.rem(48px);
+$spacing-1000: functions.rem(80px);
+$spacing-1200: functions.rem(96px);
+$spacing-1500: functions.rem(120px);
+$spacing-1600: functions.rem(128px);
+/* Variables End */
