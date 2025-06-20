@@ -16,7 +16,7 @@
   } @else {
     grid-template-columns: repeat($columns, minmax($cellWidth, 1fr));
   }
-  @if ($rows == null) {
+  @if ($rows != null) {
     grid-template-rows: $rows;
   }
   grid-gap: $gap;
