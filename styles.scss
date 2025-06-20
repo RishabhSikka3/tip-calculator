@@ -1,0 +1,279 @@
+@use "partials/variables";
+@use "partials/base";
+@use "partials/functions";
+@use "partials/mixins";
+
+.container {
+  @include mixins.flex(
+    column,
+    wrap,
+    flex-end,
+    center,
+    functions.rem(variables.$spacing-400)
+  );
+  min-height: 100vh;
+  padding-top: functions.rem(variables.$spacing-1000);
+}
+
+.calculator-logo {
+  max-inline-size: 100%;
+  object-fit: contain;
+}
+
+.tip-calculator {
+  width: 100%;
+  max-width: functions.rem(608px);
+  background-color: variables.$white;
+  padding: functions.rem(variables.$spacing-400)
+    functions.rem(variables.$spacing-300);
+  border-radius: functions.rem(15px) functions.rem(15px) 0 0;
+  box-shadow: variables.$calculator-shadow;
+}
+
+.tip-calculator-form {
+  @include mixins.flex(
+    column,
+    wrap,
+    flex-start,
+    stretch,
+    functions.rem(variables.$spacing-400)
+  );
+}
+
+.form-inputs {
+  @include mixins.flex(
+    column,
+    wrap,
+    flex-start,
+    stretch,
+    functions.rem(variables.$spacing-400)
+  );
+  width: 100%;
+}
+
+%label-text {
+  color: variables.$grey-500;
+  font-size: functions.rem(16px);
+  line-height: functions.rem(24px);
+}
+
+.label-container {
+  @extend %label-text;
+  width: 100%;
+  @include mixins.flex(row, wrap, space-between, center);
+}
+
+.label-container .error-message {
+  color: variables.$orange-400;
+}
+
+.label-container .error-message.hidden {
+  display: none;
+}
+
+.field {
+  @include mixins.flex(
+    column,
+    wrap,
+    flex-start,
+    flex-start,
+    functions.rem(8px)
+  );
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: functions.rem(variables.$spacing-200);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: none;
+  border-radius: functions.rem(5px);
+  background-color: variables.$grey-50;
+  width: 100%;
+  text-align: right;
+}
+
+input[type="number"]::placeholder {
+  opacity: 0.5;
+}
+
+input[type="number"]:focus,
+input[type="number"]:focus-visible {
+  border: none;
+  outline: functions.rem(2px) solid variables.$green-400;
+}
+
+.input-container.error input {
+  border: none;
+  outline: functions.rem(2px) solid variables.$orange-400;
+}
+
+.field.tip-options {
+  border: transparent;
+  display: flex;
+}
+
+.field.tip-options .form-label {
+  @extend %label-text;
+  margin-bottom: functions.rem(variables.$spacing-100);
+}
+
+.tip-percent-values {
+  width: 100%;
+  @include mixins.grid(
+    auto-fit,
+    functions.rem(115px),
+    functions.rem(variables.$spacing-200)
+  );
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.radio-input-container {
+  display: inline-block;
+  vertical-align: top;
+  padding: functions.rem(variables.$spacing-100)
+    functions.rem(variables.$spacing-200);
+  text-align: center;
+  background-color: variables.$green-900;
+  color: variables.$white;
+  border-radius: functions.rem(5px);
+  cursor: pointer;
+}
+
+.radio-input-container:has(input[type="radio"]:checked) {
+  background-color: variables.$green-400;
+  color: variables.$green-900;
+}
+
+.calculation-results {
+  background-color: variables.$green-900;
+  padding: 1rem;
+  border-radius: functions.rem(15px);
+  display: flex;
+  flex-direction: column;
+  gap: functions.rem(variables.$spacing-300);
+}
+
+.calculation-results .field {
+  @include mixins.flex(row, wrap, space-between, center);
+}
+
+.calculation-results .field .form-label {
+  @include mixins.flex(column, wrap, flex-start, flex-start);
+}
+
+.form-label .numerator {
+  color: variables.$white;
+  font-size: functions.rem(16px);
+  line-height: 1rem;
+  letter-spacing: 0rem;
+}
+
+.form-label .denominator {
+  color: variables.$grey-400;
+  font-size: functions.rem(13px);
+  line-height: functions.rem(19px);
+  letter-spacing: 0rem;
+}
+
+.field output {
+  color: variables.$green-400;
+  font-size: functions.rem(32px);
+  line-height: functions.rem(47px);
+  letter-spacing: functions.rem(-0.67px);
+}
+
+.calculation-results button[type="reset"] {
+  margin-top: auto;
+}
+
+.btn {
+  background-color: variables.$green-400;
+  color: variables.$green-900;
+  padding: functions.rem(variables.$spacing-100)
+    functions.rem(variables.$spacing-200);
+  border: none;
+  border-radius: functions.rem(5px);
+  width: 100%;
+  font-size: functions.rem(20px);
+  font-weight: variables.$font-weight-bold;
+  line-height: functions.rem(30px);
+  letter-spacing: 0rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  background-color: variables.$green-200;
+  transition: all 0.5s ease-out;
+}
+
+.btn:active {
+  background-color: variables.$green-800;
+}
+
+@media (min-width: 550px) {
+  .container {
+    justify-content: center;
+    gap: functions.rem(variables.$spacing-600);
+    padding: functions.rem(variables.$spacing-1000)
+      functions.rem(variables.$spacing-400);
+  }
+
+  .tip-calculator {
+    padding: functions.rem(variables.$spacing-600)
+      functions.rem(variables.$spacing-1000);
+    border-radius: functions.rem(15px);
+  }
+
+  .tip-calculator-form {
+    gap: functions.rem(40px);
+  }
+
+  .form-inputs {
+    gap: functions.rem(variables.$spacing-300);
+  }
+}
+
+@media (min-width: 992px) {
+  .tip-calculator {
+    padding: functions.rem(variables.$spacing-400);
+    max-width: functions.rem(920px);
+  }
+
+  .tip-calculator-form {
+    flex-direction: row;
+    gap: functions.rem(variables.$spacing-600);
+  }
+
+  .form-inputs {
+    gap: functions.rem(40px);
+    flex: 6;
+  }
+
+  .calculation-results {
+    padding: functions.rem(variables.$spacing-400);
+    flex: 5;
+  }
+}

@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+/* Variables Start */
+/* Variables End */
+/* Resets Start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
+  padding: 0.3333333333rem 0.6666666667rem;
+}
+
+/* Resets End */
+/* Body Start */
+html {
+  font-family: "Space Mono", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
+}
+
+/* Body End */
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: normal;
+  gap: 1.3333333333rem;
+  min-height: 100vh;
+  padding-top: 3.3333333333rem;
+}
+
+.calculator-logo {
+  max-inline-size: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.tip-calculator {
+  width: 100%;
+  max-width: 25.3333333333rem;
+  background-color: hsl(0, 100%, 100%);
+  padding: 1.3333333333rem 1rem;
+  border-radius: 0.625rem 0.625rem 0 0;
+  box-shadow: 0 32px 43px 0 rgba(79, 166, 175, 0.2);
+}
+
+.tip-calculator-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: normal;
+  gap: 1.3333333333rem;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: normal;
+  gap: 1.3333333333rem;
+  width: 100%;
+}
+
+.field.tip-options .form-label, .label-container {
+  color: hsl(186, 14%, 43%);
+  font-size: 0.6666666667rem;
+  line-height: 1rem;
+}
+
+.label-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  gap: 0;
+}
+
+.label-container .error-message {
+  color: rgb(225, 112, 82);
+}
+
+.label-container .error-message.hidden {
+  display: none;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: normal;
+  gap: 0.3333333333rem;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.6666666667rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+  border: none;
+  border-radius: 0.2083333333rem;
+  background-color: hsl(189, 47%, 97%);
+  width: 100%;
+  text-align: right;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number]::-moz-placeholder {
+  opacity: 0.5;
+}
+
+input[type=number]::placeholder {
+  opacity: 0.5;
+}
+
+input[type=number]:focus,
+input[type=number]:focus-visible {
+  border: none;
+  outline: 0.0833333333rem solid hsl(172, 67%, 45%);
+}
+
+.input-container.error input {
+  border: none;
+  outline: 0.0833333333rem solid rgb(225, 112, 82);
+}
+
+.field.tip-options {
+  border: transparent;
+  display: flex;
+}
+
+.field.tip-options .form-label {
+  margin-bottom: 0.3333333333rem;
+}
+
+.tip-percent-values {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(4.7916666667rem, 1fr));
+  grid-gap: 0.6666666667rem;
+  justify-content: start;
+  justify-items: stretch;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  display: none;
+}
+
+.radio-input-container {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.3333333333rem 0.6666666667rem;
+  text-align: center;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 100%, 100%);
+  border-radius: 0.2083333333rem;
+  cursor: pointer;
+}
+
+.radio-input-container:has(input[type=radio]:checked) {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.calculation-results {
+  background-color: hsl(183, 100%, 15%);
+  padding: 1rem;
+  border-radius: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.calculation-results .field {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  gap: 0;
+}
+
+.calculation-results .field .form-label {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: normal;
+  gap: 0;
+}
+
+.form-label .numerator {
+  color: hsl(0, 100%, 100%);
+  font-size: 0.6666666667rem;
+  line-height: 1rem;
+  letter-spacing: 0rem;
+}
+
+.form-label .denominator {
+  color: hsl(184, 14%, 56%);
+  font-size: 0.5416666667rem;
+  line-height: 0.7916666667rem;
+  letter-spacing: 0rem;
+}
+
+.field output {
+  color: hsl(172, 67%, 45%);
+  font-size: 1.3333333333rem;
+  line-height: 1.9583333333rem;
+  letter-spacing: -0.0279166667rem;
+}
+
+.calculation-results button[type=reset] {
+  margin-top: auto;
+}
+
+.btn {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  padding: 0.3333333333rem 0.6666666667rem;
+  border: none;
+  border-radius: 0.2083333333rem;
+  width: 100%;
+  font-size: 0.8333333333rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  letter-spacing: 0rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.btn:hover {
+  background-color: rgb(159, 232, 223);
+  transition: all 0.5s ease-out;
+}
+
+.btn:active {
+  background-color: rgb(8, 92, 97);
+}
+
+@media (min-width: 550px) {
+  .container {
+    justify-content: center;
+    gap: 2rem;
+    padding: 3.3333333333rem 1.3333333333rem;
+  }
+  .tip-calculator {
+    padding: 2rem 3.3333333333rem;
+    border-radius: 0.625rem;
+  }
+  .tip-calculator-form {
+    gap: 1.6666666667rem;
+  }
+  .form-inputs {
+    gap: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .tip-calculator {
+    padding: 1.3333333333rem;
+    max-width: 38.3333333333rem;
+  }
+  .tip-calculator-form {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .form-inputs {
+    gap: 1.6666666667rem;
+    flex: 6;
+  }
+  .calculation-results {
+    padding: 1.3333333333rem;
+    flex: 5;
+  }
+}/*# sourceMappingURL=styles.css.map */

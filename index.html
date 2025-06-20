@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -17,6 +16,150 @@
     <title>Tip calculator app</title>
   </head>
   <body>
+    <main class="container">
+      <img
+        src="images/logo.svg"
+        alt="Descriptive Calculator Heading"
+        class="calculator-logo"
+      />
+
+      <article class="tip-calculator">
+        <form class="tip-calculator-form" id="tip-calculator-form" novalidate>
+          <div class="form-inputs">
+            <div class="field">
+              <div class="label-container">
+                <label class="form-label" for="bill">Bill</label>
+                <span
+                  id="bill-error-message"
+                  class="error-message hidden"
+                  aria-hidden="true"
+                  aria-live="assertive"
+                ></span>
+              </div>
+              <div class="input-container">
+                <img
+                  src="images/icon-dollar.svg"
+                  alt="Descriptive Dollar Icon"
+                  class="input-icon"
+                />
+                <input
+                  type="number"
+                  id="bill"
+                  name="bill"
+                  placeholder="0"
+                  aria-required="true"
+                  aria-describedby="bill-error-message"
+                />
+              </div>
+            </div>
+
+            <fieldset class="field tip-options">
+              <legend class="form-label">Select Tip %</legend>
+
+              <div class="tip-percent-values">
+                <label class="radio-input-container">
+                  <input type="radio" id="tip-5" name="tip" value="5" />
+                  <span>5%</span>
+                </label>
+
+                <label class="radio-input-container">
+                  <input type="radio" id="tip-10" name="tip" value="10" />
+                  <span>10%</span>
+                </label>
+
+                <label class="radio-input-container">
+                  <input
+                    type="radio"
+                    id="tip-15"
+                    name="tip"
+                    value="15"
+                    checked
+                    aria-checked="true"
+                  />
+                  <span>15%</span>
+                </label>
+
+                <label class="radio-input-container">
+                  <input type="radio" id="tip-25" name="tip" value="25" />
+                  <span>25%</span>
+                </label>
+
+                <label class="radio-input-container">
+                  <input type="radio" id="tip-50" name="tip" value="50" />
+                  <span>50%</span>
+                </label>
+
+                <input
+                  type="number"
+                  id="custom-tip"
+                  name="tip"
+                  placeholder="Custom"
+                  aria-label="Custom Tip"
+                />
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <div class="label-container">
+                <label class="form-label" for="people">Number of People</label
+                ><span
+                  id="people-error-message"
+                  class="error-message hidden"
+                  aria-hidden="true"
+                  aria-live="assertive"
+                ></span>
+              </div>
+              <div class="input-container">
+                <img
+                  src="images/icon-person.svg"
+                  alt="Descriptive Person Icon"
+                  class="input-icon"
+                />
+                <input
+                  type="number"
+                  id="people"
+                  name="people"
+                  placeholder="0"
+                  aria-required="true"
+                  aria-describedby="people-error-message"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="calculation-results">
+            <div class="field">
+              <label class="form-label" for="tip-per-person"
+                ><span class="numerator">Tip Amount</span>
+                <span class="denominator">/ Person</span></label
+              >
+              <output
+                id="tip-per-person"
+                name="tip-per-person"
+                for="bill people tip-5 tip-10 tip-15 tip-25 tip-50 custom-tip"
+                aria-live="polite"
+              ></output>
+            </div>
+
+            <div class="field">
+              <label class="form-label" for="total-per-person"
+                ><span class="numerator">Total</span>
+                <span class="denominator">/ Person</span></label
+              >
+              <output
+                id="total-per-person"
+                name="total-per-person"
+                for="bill people tip-5 tip-10 tip-15 tip-25 tip-50 custom-tip"
+                aria-live="polite"
+              ></output>
+            </div>
+
+            <button class="btn" type="reset">RESET</button>
+          </div>
+        </form>
+      </article>
+    </main>
+
     <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

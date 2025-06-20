@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
-@use "functions";
 
 /* Variables Start */
 
@@ -27,15 +26,18 @@ $font-size-body: 24px;
 // Font Weights
 $font-weight-bold: 700;
 
+// Shadow
+$calculator-shadow: 0 32px 43px 0 rgb(79, 166, 175, 0.2);
+
 // Spacing
-$spacing-0: functions.rem(0px);
-$spacing-100: functions.rem(8px);
-$spacing-200: functions.rem(16px);
-$spacing-300: functions.rem(24px);
-$spacing-400: functions.rem(32px);
-$spacing-600: functions.rem(48px);
-$spacing-1000: functions.rem(80px);
-$spacing-1200: functions.rem(96px);
-$spacing-1500: functions.rem(120px);
-$spacing-1600: functions.rem(128px);
+$spacing-0: 0px;
+$spacing-100: 8px;
+$spacing-200: 16px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-600: 48px;
+$spacing-1000: 80px;
+$spacing-1200: 96px;
+$spacing-1500: 120px;
+$spacing-1600: 128px;
 /* Variables End */
